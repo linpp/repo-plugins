@@ -31,7 +31,7 @@ class myAddon(t1mAddon):
 #        d = zlib.decompressobj(16+zlib.MAX_WBITS)
 #        html = d.decompress(html)
       except:
-        html = self.getRequest('https://abc.com/shows')
+        html = self.getRequest('https://abc.com/shows?category=A-Z')
       html = re.compile("<script type=['\"]text/javascript['\"].?>window\['__abc_com__'\]=(.+?);</script>", re.DOTALL).search(html).group(1)
       jo = json.loads(html);
       modules = jo['page']['content']['shell']['module']
